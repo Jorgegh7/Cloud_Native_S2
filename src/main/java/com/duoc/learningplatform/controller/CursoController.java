@@ -50,7 +50,6 @@ public class CursoController {
         return ResponseEntity.ok(cursoService.update(id,curso));
     }
 
-
     @DeleteMapping("/{id}")
     public ResponseEntity<Boolean> eliminarCurso(@PathVariable Long id){
         return ResponseEntity.ok(cursoService.delete(id));
