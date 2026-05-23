@@ -44,5 +44,4 @@ public class Usuario {
         this.contrasenia = contrasenia;
         this.rol = rol;
     }
-
 }
