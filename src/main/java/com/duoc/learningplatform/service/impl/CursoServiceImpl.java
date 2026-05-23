@@ -23,7 +23,7 @@ public class CursoServiceImpl implements CursoService {
         this.cursoRepository = cursoRepository;
         this.usuarioRepository = usuarioRepository;
     }
-    
+
     @Override
     public List<Curso> findAll() {
         return cursoRepository.findAll();
