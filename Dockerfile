@@ -1,4 +1,17 @@
-FROM ubuntu:latest
-LABEL authors="jorge"
+FROM eclipse-temurin:22-jdk AS buildstage
 
-ENTRYPOINT ["top", "-b"]
+RUN apt-get update && apt-get install -y maven
+
+WORKDIR /app
+
+COPY pom.xml .
+COPY src /app/src
+RUN mvn clean package
+
+FROM eclipse-temurin:22-jdk
+
+COPY --from=buildstage /app/target/microservicio-1.0.0.jar /app/app.jar
+
+EXPOSE 8080
+
+CMD ["java", "-jar", "/app/app.jar"]
