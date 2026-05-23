@@ -9,10 +9,12 @@ import com.duoc.learningplatform.repository.InscripcionRepository;
 import com.duoc.learningplatform.repository.UsuarioRepository;
 import com.duoc.learningplatform.service.contrato.InscripcionService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Service
 public class InscripcionServiceImpl implements InscripcionService {
 
     private final InscripcionRepository inscripcionRepository;

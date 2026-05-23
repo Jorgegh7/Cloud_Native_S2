@@ -2,8 +2,6 @@ package com.duoc.learningplatform.service.contrato;
 
 import com.duoc.learningplatform.model.Inscripcion;
 
-import java.util.List;
-
 public interface InscripcionService {
 
     Inscripcion save(Inscripcion inscripcion);
