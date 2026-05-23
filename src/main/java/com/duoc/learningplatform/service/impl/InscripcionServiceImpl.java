@@ -27,14 +27,6 @@ public class InscripcionServiceImpl implements InscripcionService {
     }
 
     @Override
-    public List<Inscripcion> findByCursoId(Long id) {
-        if(cursoRepository.existsById(id)){
-            return inscripcionRepository.findByCursoId(id);
-        }
-        throw new RuntimeException("Curso no encontrado");
-    }
-
-    @Override
     public Inscripcion save(Inscripcion inscripcion) {
         //Validar Usuario
         Usuario estudiante = usuarioRepository.findById(inscripcion.getEstudiante().getId())
