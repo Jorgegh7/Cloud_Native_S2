@@ -17,17 +17,9 @@ public class InscripcionController {
         this.inscripcionService = inscripcionService;
     }
 
-    @GetMapping("/cursos/{id}")
-    public ResponseEntity<?> listaInscripcionesPorCursoId(@PathVariable Long id){
-        try{
-            return ResponseEntity.ok(inscripcionService.findByCursoId(id));
-        } catch (RuntimeException e) {
-            return ResponseEntity.status(404).body(e.getMessage());
-        }
-    }
 
     @GetMapping("/{id}")
-    public ResponseEntity<?> inscripcionPorId(@PathVariable Long id){
+    public ResponseEntity<?> buscarInscripcionPorId(@PathVariable Long id){
         try{
             return ResponseEntity.ok(inscripcionService.findById(id));
         } catch (RuntimeException e) {
