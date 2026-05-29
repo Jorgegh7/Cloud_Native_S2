@@ -7,4 +7,5 @@ public interface InscripcionService {
     Inscripcion save(Inscripcion inscripcion);
     Boolean delete(Long id);
     Inscripcion findById(Long id);
+    Inscripcion update(Long id, Inscripcion inscripcion);
 }

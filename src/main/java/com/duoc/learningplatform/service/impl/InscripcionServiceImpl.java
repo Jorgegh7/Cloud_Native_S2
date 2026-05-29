@@ -68,4 +68,18 @@ public class InscripcionServiceImpl implements InscripcionService {
         return inscripcionRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Inscripcion no encontrada"));
     }
+
+    @Override
+    public Inscripcion update(Long id, Inscripcion inscripcion) {
+        Inscripcion existente = inscripcionRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Inscripción no encontrada"));
+
+        Usuario estudiante = usuarioRepository.findById(inscripcion.getEstudiante().getId())
+                .orElseThrow(() -> new RuntimeException("Estudiante no encontrado"));
+
+        existente.setEstudiante(estudiante);
+        existente.setCursos(inscripcion.getCursos());
+        existente.setTotalPagar(inscripcion.getTotalPagar());
+        return inscripcionRepository.save(existente);
+    }
 }

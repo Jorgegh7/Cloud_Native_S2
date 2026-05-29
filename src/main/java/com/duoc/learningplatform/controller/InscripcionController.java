@@ -44,4 +44,15 @@ public class InscripcionController {
             return ResponseEntity.status(404).body(e.getMessage());
         }
     }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<?> actualizarInscripcion(@PathVariable Long id, @RequestBody Inscripcion inscripcion) {
+        try {
+            return ResponseEntity.ok(inscripcionService.update(id, inscripcion));
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(404).body(e.getMessage());
+        }
+    }
+
+
 }
