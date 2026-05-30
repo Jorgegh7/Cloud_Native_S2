@@ -53,4 +53,5 @@ public class InscripcionController {
             return ResponseEntity.status(404).body(e.getMessage());
         }
     }
+
 }
